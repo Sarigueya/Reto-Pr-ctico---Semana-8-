@@ -59,7 +59,7 @@ export class Tab1Page {
   /** Carrera universitaria. */
   public academicDegree: string = 'Ingeniería de Software';
 
-  /** Mensaje de presentación de la app (descriptivo, sin saludo externo). */
+  /** Mensaje de presentación de la app  */
   public welcomeMessage: string =
     'Esta app está construida con Ionic y Angular como práctica de la carrera de Ingeniería de Software. Está organizada en tres pestañas y cada una demuestra un concepto distinto trabajado en clase.';
 
