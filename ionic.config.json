@@ -1,0 +1,7 @@
+{
+  "name": "appPestanas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
