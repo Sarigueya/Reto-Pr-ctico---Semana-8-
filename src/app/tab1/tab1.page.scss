@@ -1,0 +1,43 @@
+.bienvenida-card {
+  ion-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--app-title-color);
+  }
+
+  ion-card-subtitle {
+    font-size: 0.95rem;
+    color: var(--app-text-soft);
+    margin-top: 4px;
+  }
+}
+
+.mensaje-bienvenida {
+  line-height: 1.5;
+  color: var(--ion-text-color, #222);
+}
+
+.temas-list {
+  background: transparent;
+  margin: 16px 0 0 0;
+  padding: 0;
+
+  ion-item {
+    --padding-start: 8px;
+    --inner-padding-end: 8px;
+    margin-bottom: 6px;
+    --background: transparent;
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ion-text-color, #4b3520);
+      margin-bottom: 2px;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: var(--app-text-soft);
+    }
+  }
+}

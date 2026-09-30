@@ -1,17 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--
+  Se usan las directivas estructurales clasicas (*ngSwitch, *ngFor, *ngIf)
+  de forma intencional, ya que el enunciado de la practica pide hacer uso
+  de templates de Angular.
+-->
+<!-- eslint-disable @angular-eslint/template/prefer-control-flow -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<app-toolbar title="Tab 3: Perfil" />
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="app-card perfil-card">
+    <div class="perfil-banner"></div>
+
+    <div class="avatar-wrapper">
+      <ion-avatar class="perfil-avatar">
+        <img [src]="avatarImageUrl" [alt]="'Avatar de ' + fullName" />
+      </ion-avatar>
+    </div>
+
+    <ion-card-header class="text-center">
+      <ion-card-title>{{ fullName }}</ion-card-title>
+      <ion-card-subtitle>{{ roleTitle }}</ion-card-subtitle>
+
+      <div class="estado-wrapper">
+        <ion-chip [ngClass]="isAvailable ? 'estado-disponible' : 'estado-ocupado'">
+          <ion-icon [name]="isAvailable ? 'checkmark-circle' : 'pause-circle'"></ion-icon>
+          <ion-label>Estado: {{ isAvailable ? 'Disponible' : 'Ocupado' }}</ion-label>
+        </ion-chip>
+      </div>
+
+      <ion-note class="estado-descripcion">
+        <ng-container [ngSwitch]="isAvailable">
+          <span *ngSwitchCase="true">
+            Disponible para recibir proyectos y consultas.
+          </span>
+          <span *ngSwitchDefault>
+            Ocupado actualmente. Respondo en cuanto tenga un hueco.
+          </span>
+        </ng-container>
+      </ion-note>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="inset" class="contactos-list">
+        <ion-item *ngFor="let contacto of contacts">
+          <ion-icon slot="start" [name]="contacto.icono" [color]="contacto.color"></ion-icon>
+          <ion-label>
+            <h3>{{ contacto.etiqueta }}</h3>
+            <p>{{ contacto.valor }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <div class="toggle-wrapper">
+        <ion-button
+          expand="block"
+          [color]="isAvailable ? 'danger' : 'success'"
+          (click)="toggleAvailability()"
+        >
+          <ion-icon name="sync-outline" slot="start"></ion-icon>
+          <ng-container *ngIf="isAvailable; else marcarDisponible">
+            Marcar como Ocupado
+          </ng-container>
+          <ng-template #marcarDisponible>Marcar como Disponible</ng-template>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

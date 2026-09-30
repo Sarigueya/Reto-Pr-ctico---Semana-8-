@@ -1,17 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-toolbar title="Tab 2: Contador" />
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="app-card app-card--accent contador-card">
+    <ion-card-header>
+      <ion-card-title>Contador Interactivo</ion-card-title>
+      <ion-card-subtitle>Manipulación de estado en TypeScript</ion-card-subtitle>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-card-content class="text-center">
+      <div class="contador-box">
+        <span class="valor-texto">{{ counterValue }}</span>
+        <ion-badge [color]="counterValue === 0 ? 'medium' : 'primary'">
+          Valor Actual
+        </ion-badge>
+      </div>
+
+      <ion-note class="contador-pista">
+        El contador nunca desciende por debajo de cero.
+      </ion-note>
+
+      <div class="botones-accion">
+        <ion-button expand="block" color="primary" (click)="increase()">
+          <ion-icon name="add-outline" slot="start"></ion-icon>
+          Aumentar
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          color="danger"
+          [disabled]="counterValue === 0"
+          (click)="decrease()"
+        >
+          <ion-icon name="remove-outline" slot="start"></ion-icon>
+          Disminuir
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill="clear"
+          color="medium"
+          [disabled]="counterValue === 0"
+          (click)="reset()"
+        >
+          <ion-icon name="refresh-outline" slot="start"></ion-icon>
+          Poner en Cero
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

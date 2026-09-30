@@ -1,0 +1,38 @@
+.text-center {
+  text-align: center;
+}
+
+.contador-box {
+  padding: 24px 0 8px 0;
+}
+
+.valor-texto {
+  display: block;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 800;
+  color: #f97316; /* fallback */
+  background: linear-gradient(135deg, #ff9859, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ion-badge {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.contador-pista {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--app-text-soft);
+}
+
+.botones-accion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}

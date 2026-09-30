@@ -1,17 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--
+  Se usan las directivas estructurales clasicas (*ngFor) de forma intencional,
+  ya que el enunciado de la practica pide hacer uso de templates de Angular.
+-->
+<!-- eslint-disable @angular-eslint/template/prefer-control-flow -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<app-toolbar title="Tab 1: Inicio" />
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="app-card app-card--accent bienvenida-card">
+    <ion-card-header>
+      <ion-card-title>¡Hola, {{ fullName }}!</ion-card-title>
+      <ion-card-subtitle>{{ academicDegree }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="mensaje-bienvenida">{{ welcomeMessage }}</p>
+
+      <ion-list lines="none" class="temas-list">
+        <ion-item *ngFor="let tema of topics">
+          <ion-icon slot="start" [name]="tema.icono" [color]="tema.color"></ion-icon>
+          <ion-label>
+            <h3>{{ tema.titulo }}</h3>
+            <p>{{ tema.descripcion }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

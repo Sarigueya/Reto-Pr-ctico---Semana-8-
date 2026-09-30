@@ -30,8 +30,36 @@
  * -----------------------------------------------------
  * For more info, please see:
  * https://ionicframework.com/docs/theming/dark-mode
+ *
+ * "App de Pestañas" NO usa las paletas de modo oscuro de Ionic. El tema
+ * oscuro lo gestiona ThemeService (boton en la cabecera + estado +
+ * localStorage) aplicando la clase `app-dark` sobre <html>. La paleta
+ * oscura propia, que conserva la identidad naranja, vive en
+ * src/theme/variables.scss.
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+/* --- Estilos compartidos de tarjetas --- */
+.app-card {
+  --background: var(--app-card-bg);
+  border-radius: 22px;
+  box-shadow: var(--app-card-shadow);
+  margin: 12px 4px 24px 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Barra de acento superior: se usa en Inicio y Contador (Perfil tiene banner). */
+.app-card--accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--app-accent-a), var(--app-accent-b));
+  z-index: 3;
+}

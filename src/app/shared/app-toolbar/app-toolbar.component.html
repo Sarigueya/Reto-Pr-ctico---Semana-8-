@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar class="app-toolbar">
+    <ion-title>{{ title }}</ion-title>
+
+    <ion-button
+      slot="end"
+      fill="clear"
+      class="theme-toggle"
+      [attr.aria-label]="
+        theme.isDark() ? 'Activar tema claro' : 'Activar tema oscuro'
+      "
+      (click)="theme.toggle()"
+    >
+      <ion-icon
+        slot="icon-only"
+        [name]="theme.isDark() ? 'sunny-outline' : 'moon-outline'"
+      ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>

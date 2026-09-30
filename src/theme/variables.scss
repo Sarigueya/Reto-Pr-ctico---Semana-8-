@@ -1,2 +1,151 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+//
+// Tema de "App de Pestañas": naranja claro, limpio y moderno.
+//
+// El modo oscuro NO sigue automaticamente al sistema: lo gestiona
+// ThemeService con un boton en la cabecera (estado + localStorage).
+// La paleta oscura se activa con la clase `app-dark` sobre <html> y
+// conserva la identidad naranja de la app.
+
+:root {
+  /* --- Variables propias de la app (tema claro) --- */
+  --app-header-bg: #fffaf3;
+  --app-title-color: #c2571a;
+  --app-text-soft: #a5714c;
+  --app-border-soft: rgba(255, 150, 80, 0.3);
+  --app-card-bg: #ffffff;
+  --app-card-shadow: 0 10px 30px rgba(255, 150, 80, 0.12);
+  --app-accent-a: #ffd9b8;
+  --app-accent-b: #ff9859;
+  --app-banner-a: #ffe3cc;
+  --app-banner-b: #ffb27d;
+  --app-avatar-ring: #fff8ef;
+  --app-avatar-shadow: 0 6px 18px rgba(255, 140, 60, 0.28);
+  --app-estado-libre: #128a76;
+  --app-estado-ocupado: #c0342a;
+
+  /* --- Paleta principal: naranja claro --- */
+  --ion-color-primary: #ff9859;
+  --ion-color-primary-rgb: 255, 152, 89;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #e0864f;
+  --ion-color-primary-tint: #ffac79;
+
+  --ion-color-secondary: #ffb27d;
+  --ion-color-secondary-rgb: 255, 178, 125;
+  --ion-color-secondary-contrast: #4b2a0e;
+  --ion-color-secondary-contrast-rgb: 75, 42, 14;
+  --ion-color-secondary-shade: #e09d6e;
+  --ion-color-secondary-tint: #ffbb91;
+
+  --ion-color-tertiary: #ff9661;
+  --ion-color-tertiary-rgb: 255, 150, 97;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #e08455;
+  --ion-color-tertiary-tint: #ffa174;
+
+  /* --- Fondo y texto cálidos --- */
+  --ion-background-color: #fff8ef;
+  --ion-background-color-rgb: 255, 248, 239;
+
+  --ion-text-color: #43290f;
+  --ion-text-color-rgb: 67, 41, 15;
+
+  /* --- Escala de tonos cálidos (bordes y separadores) --- */
+  --ion-color-step-50: #fcf6ef;
+  --ion-color-step-100: #f9efe2;
+  --ion-color-step-150: #f5e5d5;
+  --ion-color-step-200: #f1dbc8;
+  --ion-color-step-250: #edd0ba;
+  --ion-color-step-300: #e8c5ab;
+  --ion-color-step-350: #e3b89a;
+  --ion-color-step-400: #dda888;
+  --ion-color-step-450: #d79a76;
+  --ion-color-step-500: #cf8d68;
+  --ion-color-step-550: #b87a58;
+  --ion-color-step-600: #9e6648;
+  --ion-color-step-650: #84533a;
+  --ion-color-step-700: #6d432e;
+  --ion-color-step-750: #573624;
+  --ion-color-step-800: #432b1c;
+  --ion-color-step-850: #322019;
+  --ion-color-step-900: #241714;
+  --ion-color-step-950: #17100e;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tema oscuro (activado por ThemeService con la clase `app-dark` en <html>).
+ * ---------------------------------------------------------------------------
+ */
+:root.app-dark {
+  /* --- Variables propias de la app (tema oscuro) --- */
+  --app-header-bg: #241812;
+  --app-title-color: #ffb27d;
+  --app-text-soft: #c9a58a;
+  --app-border-soft: rgba(255, 168, 110, 0.28);
+  --app-card-bg: #261a12;
+  --app-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --app-accent-a: #6e3a19;
+  --app-accent-b: #ff9859;
+  --app-banner-a: #3a2418;
+  --app-banner-b: #7a421f;
+  --app-avatar-ring: #1f140e;
+  --app-avatar-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  --app-estado-libre: #2fd6c1;
+  --app-estado-ocupado: #ff8378;
+
+  /* --- Fondo y texto --- */
+  --ion-background-color: #17100b;
+  --ion-background-color-rgb: 23, 16, 11;
+
+  --ion-text-color: #f2e4d8;
+  --ion-text-color-rgb: 242, 228, 216;
+
+  --ion-card-background: #261a12;
+
+  /* --- Paleta naranja adaptada al fondo oscuro --- */
+  --ion-color-primary: #ffa86e;
+  --ion-color-primary-rgb: 255, 168, 110;
+  --ion-color-primary-contrast: #1a0d05;
+  --ion-color-primary-contrast-rgb: 26, 13, 5;
+  --ion-color-primary-shade: #e0935f;
+  --ion-color-primary-tint: #ffb584;
+
+  --ion-color-secondary: #e09d6e;
+  --ion-color-secondary-rgb: 224, 157, 110;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #c48a60;
+  --ion-color-secondary-tint: #e5ab7f;
+
+  --ion-color-tertiary: #ff9661;
+  --ion-color-tertiary-rgb: 255, 150, 97;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #e08455;
+  --ion-color-tertiary-tint: #ffa174;
+
+  /* --- Escala de tonos cálidos para el fondo oscuro --- */
+  --ion-color-step-50: #2e2117;
+  --ion-color-step-100: #382820;
+  --ion-color-step-150: #432f25;
+  --ion-color-step-200: #4d362b;
+  --ion-color-step-250: #583e31;
+  --ion-color-step-300: #634537;
+  --ion-color-step-350: #6e4d3d;
+  --ion-color-step-400: #785543;
+  --ion-color-step-450: #835d49;
+  --ion-color-step-500: #8d664f;
+  --ion-color-step-550: #9a735c;
+  --ion-color-step-600: #a88068;
+  --ion-color-step-650: #b58d75;
+  --ion-color-step-700: #c29a82;
+  --ion-color-step-750: #d0a88f;
+  --ion-color-step-800: #ddb69c;
+  --ion-color-step-850: #eac4a9;
+  --ion-color-step-900: #f7d3b6;
+  --ion-color-step-950: #fce2ca;
+}

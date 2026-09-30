@@ -1,1 +1,7 @@
-
+ion-tab-bar {
+  --background: var(--app-header-bg);
+  --border: 1px solid var(--app-border-soft);
+  --color: var(--app-text-soft);
+  --color-selected: #f97316;
+  padding-top: 2px;
+}

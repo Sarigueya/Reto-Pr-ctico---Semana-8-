@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+ion-toolbar.app-toolbar {
+  --background: var(--app-header-bg);
+  --ion-toolbar-color: var(--app-title-color);
+  --ion-toolbar-border-color: var(--app-border-soft);
+
+  ion-title {
+    color: var(--app-title-color);
+    font-weight: 600;
+  }
+}
+
+.theme-toggle {
+  --color: var(--app-title-color);
+  margin-inline-end: 4px;
+
+  ion-icon {
+    font-size: 1.35rem;
+  }
+}
