@@ -12,14 +12,61 @@
   }
 }
 
-.mensaje-bienvenida {
-  line-height: 1.5;
+/* Ficha de autor: deja claro quién presenta la práctica. */
+.presentado-por {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--app-border-soft);
+  background: transparent;
+  text-align: center;
+
+  .presentado-por-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--app-text-soft);
+  }
+
+  .presentado-por-nombre {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ion-text-color, #43290f);
+  }
+
+  .presentado-por-carrera {
+    font-size: 0.85rem;
+    color: var(--app-text-soft);
+  }
+}
+
+/* Mensaje de presentación: se lee como una nota personal, no texto suelto. */
+.mensaje-estudiante {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 3px solid var(--app-accent-b);
+  background: rgba(255, 150, 80, 0.08);
+  line-height: 1.6;
+  text-align: justify;
   color: var(--ion-text-color, #222);
+}
+
+.lista-titulo {
+  margin: 20px 0 4px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--app-text-soft);
 }
 
 .temas-list {
   background: transparent;
-  margin: 16px 0 0 0;
+  margin: 8px 0 0 0;
   padding: 0;
 
   ion-item {
@@ -40,4 +87,12 @@
       color: var(--app-text-soft);
     }
   }
+}
+
+.firma {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--app-text-soft);
 }

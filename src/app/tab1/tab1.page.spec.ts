@@ -23,14 +23,37 @@ describe('Tab1Page', () => {
 
   it('interpolates the properties in the card', () => {
     const title = fixture.nativeElement.querySelector('ion-card-title');
-    const subtitle = fixture.nativeElement.querySelector('ion-card-subtitle');
+    const autor = fixture.nativeElement.querySelector('.presentado-por');
 
-    expect(title.textContent).toContain('Sara Isabella Andrade');
-    expect(subtitle.textContent).toContain('Ingeniería de Software');
+    expect(title.textContent).toContain('Bienvenido(a)');
+    expect(title.textContent).not.toContain('Sara Isabella Andrade');
+    expect(autor.textContent).toContain('Presentado por');
+    expect(autor.textContent).toContain('Sara Isabella Andrade');
+    expect(autor.textContent).toContain('Ingeniería de Software');
   });
 
   it('renders one item per topic with *ngFor', () => {
     const items = fixture.nativeElement.querySelectorAll('.temas-list ion-item');
     expect(items.length).toBe(component.topics.length);
+  });
+
+  it('expone un mensaje de presentación de la app', () => {
+    expect(component.welcomeMessage).toContain('Ionic');
+    expect(component.welcomeMessage).toContain('Angular');
+    expect(component.welcomeMessage).toContain('Ingeniería de Software');
+  });
+
+  it('el footer resume la práctica', () => {
+    const firma = fixture.nativeElement.querySelector('.firma');
+    expect(firma.textContent).toContain('Práctica');
+    expect(firma.textContent).toContain('Desarrollo Multiplataforma');
+  });
+
+  it('la guía describe el contenido de cada pestaña', () => {
+    const titulos = component.topics.map((t) => t.titulo).join(' | ');
+    expect(titulos).toContain('Inicio');
+    expect(titulos).toContain('Contador');
+    expect(titulos).toContain('Perfil');
+    expect(titulos).not.toContain('Unidad 3');
   });
 });

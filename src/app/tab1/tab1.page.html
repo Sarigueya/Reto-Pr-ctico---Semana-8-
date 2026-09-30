@@ -9,12 +9,19 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-card class="app-card app-card--accent bienvenida-card">
     <ion-card-header>
-      <ion-card-title>¡Hola, {{ fullName }}!</ion-card-title>
-      <ion-card-subtitle>{{ academicDegree }}</ion-card-subtitle>
+      <ion-card-title>¡Bienvenido(a) a mi app!</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p class="mensaje-bienvenida">{{ welcomeMessage }}</p>
+      <div class="presentado-por">
+        <span class="presentado-por-label">Presentado por</span>
+        <strong class="presentado-por-nombre">{{ fullName }}</strong>
+        <span class="presentado-por-carrera">{{ academicDegree }}</span>
+      </div>
+
+      <p class="mensaje-estudiante">{{ welcomeMessage }}</p>
+
+      <h3 class="lista-titulo">Contenido de cada pestaña</h3>
 
       <ion-list lines="none" class="temas-list">
         <ion-item *ngFor="let tema of topics">
@@ -25,6 +32,10 @@
           </ion-label>
         </ion-item>
       </ion-list>
+
+      <ion-note class="firma">
+        Práctica — Desarrollo Multiplataforma · Ionic + Angular
+      </ion-note>
     </ion-card-content>
   </ion-card>
 </ion-content>

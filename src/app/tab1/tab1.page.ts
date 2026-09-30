@@ -5,15 +5,15 @@ import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonCardSubtitle,
   IonCardContent,
   IonList,
   IonItem,
   IonLabel,
   IonIcon,
+  IonNote,
 } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { bookOutline, schoolOutline, sparklesOutline } from 'ionicons/icons';
+import { homeOutline, calculatorOutline, personOutline } from 'ionicons/icons';
 import { AppToolbarComponent } from '../shared/app-toolbar/app-toolbar.component';
 
 /**
@@ -44,12 +44,12 @@ export interface TemaPractica {
     IonCard,
     IonCardHeader,
     IonCardTitle,
-    IonCardSubtitle,
     IonCardContent,
     IonList,
     IonItem,
     IonLabel,
     IonIcon,
+    IonNote,
   ],
 })
 export class Tab1Page {
@@ -59,33 +59,36 @@ export class Tab1Page {
   /** Carrera universitaria. */
   public academicDegree: string = 'Ingeniería de Software';
 
-  /** Texto introductorio de la tarjeta. */
+  /** Mensaje de presentación de la app (descriptivo, sin saludo externo). */
   public welcomeMessage: string =
-    'Bienvenido a tu aplicación Ionic. Esta tarjeta demuestra cómo enlazar propiedades de TypeScript con la vista.';
+    'Esta app está construida con Ionic y Angular como práctica de la carrera de Ingeniería de Software. Está organizada en tres pestañas y cada una demuestra un concepto distinto trabajado en clase.';
 
-  /** Contenido de la práctica, renderizado con *ngFor. */
+  /** Contenido de cada pestaña, renderizado con *ngFor. */
   public topics: TemaPractica[] = [
     {
-      icono: 'book-outline',
-      titulo: 'Unidad 3: Desarrollo Multiplataforma',
-      descripcion: 'Prácticas con Ionic Framework y Angular.',
+      icono: 'home-outline',
+      titulo: 'Pestaña 1 · Inicio',
+      descripcion:
+        'La presentación de la app: datos del archivo .ts enlazados con la vista.',
       color: 'primary',
     },
     {
-      icono: 'school-outline',
-      titulo: 'Navegación por pestañas',
-      descripcion: 'Tres pantallas independientes con ion-tabs.',
+      icono: 'calculator-outline',
+      titulo: 'Pestaña 2 · Contador',
+      descripcion:
+        'Un contador interactivo que aumenta y disminuye sin bajar de cero.',
       color: 'tertiary',
     },
     {
-      icono: 'sparkles-outline',
-      titulo: 'Interpolación en la vista',
-      descripcion: 'Las variables del archivo .ts se muestran en el HTML.',
+      icono: 'person-outline',
+      titulo: 'Pestaña 3 · Perfil',
+      descripcion:
+        'Tarjeta de presentación con avatar, estado Disponible/Ocupado y contacto.',
       color: 'success',
     },
   ];
 
   constructor() {
-    addIcons({ bookOutline, schoolOutline, sparklesOutline });
+    addIcons({ homeOutline, calculatorOutline, personOutline });
   }
 }
